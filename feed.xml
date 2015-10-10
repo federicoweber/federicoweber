@@ -1021,7 +1021,7 @@
             </a>
           </li>
           <li class='-with_text -push_right'>
-            <a href='mailto:federicoweber@gmail.com' target='_blank' title='email'>
+            <a href='mailto:federicoweber@gmail.com' title='email'>
               <span class='text'>email me</span>
               <i class='fa fa-envelope-o'></i>
             </a>
