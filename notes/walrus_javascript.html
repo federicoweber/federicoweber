@@ -6,10 +6,10 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href='/feed.xml' rel='alternate' type='application/atom+xml'>
     <link href='favicon.ico' rel='icon' type='image/ico'>
-    <title>Federico Weber</title>
-    <link href="assets/style/application.css" rel="stylesheet" />
+    <title>Walrus.js</title>
+    <link href="../assets/style/application.css" rel="stylesheet" />
   </head>
-  <body class='index'>
+  <body class='notes notes_walrus_javascript'>
     <div id='wrapper'>
       <header id='main_header'>
         <div id='main_header--content'>
@@ -22,7 +22,7 @@
                 <a href='/about_me'>about me</a>
               </li>
               <li>
-                <a href='/notes'>notes</a>
+                <a class='-active' href='/notes'>notes</a>
               </li>
               <li>
                 <a href='https://www.goodreads.com/user/show/17488758-federico'>reading</a>
@@ -33,22 +33,19 @@
         </div>
       </header>
       <div class='main_content'>
-        <div id='homepage--about'>
-          <div class='homepage--about--content'>
-            <h1 id='about_plate'>
-              <div id='about_plate--content'>
-                <span id='about_plate--des'>
-                  <b>Designer &</b>
-                </span>
-                <span id='about_plate--dev'>
-                  <b>Developer</b>
-                </span>
-                <span id='about_plate--hand'>handcrafting</span>
-                <span id='about_plate--web'>websites & apps.</span>
-              </div>
+        <article class='note -single_note'>
+          <header class='note--header'>
+            <h1>
+              Walrus.js
             </h1>
-          </div>
-        </div>
+            <div class='note--meta'>
+              <time datetime='2012-06-28 15:21:29 UTC'>June 2012</time>
+            </div>
+          </header>
+          <p><a href="http://documentup.com/jeremyruppel/walrus/">Walrus</a> is a new templating library with a interesting twist on <strong>presentation logic</strong>, and an useful collection of <strong>view helpers</strong>.</p>
+          
+          <p>I&rsquo;m currently testing it to use it as the default templating language in <a href="https://github.com/federicoweber/vgHear">vgHear</a></p>
+        </article>
       </div>
       <footer id='main_footer'>
         <ul>
@@ -92,7 +89,7 @@
         </ul>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="assets/js/application.js"></script>
-    <link href="assets/style/code.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="../assets/js/application.js"></script>
+    <link href="../assets/style/code.css" rel="stylesheet" />
   </body>
 </html>

@@ -6,10 +6,10 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href='/feed.xml' rel='alternate' type='application/atom+xml'>
     <link href='favicon.ico' rel='icon' type='image/ico'>
-    <title>Federico Weber</title>
-    <link href="assets/style/application.css" rel="stylesheet" />
+    <title>Front-end development with Nodefront</title>
+    <link href="../assets/style/application.css" rel="stylesheet" />
   </head>
-  <body class='index'>
+  <body class='notes notes_frontend_development_tool_node_front'>
     <div id='wrapper'>
       <header id='main_header'>
         <div id='main_header--content'>
@@ -22,7 +22,7 @@
                 <a href='/about_me'>about me</a>
               </li>
               <li>
-                <a href='/notes'>notes</a>
+                <a class='-active' href='/notes'>notes</a>
               </li>
               <li>
                 <a href='https://www.goodreads.com/user/show/17488758-federico'>reading</a>
@@ -33,22 +33,21 @@
         </div>
       </header>
       <div class='main_content'>
-        <div id='homepage--about'>
-          <div class='homepage--about--content'>
-            <h1 id='about_plate'>
-              <div id='about_plate--content'>
-                <span id='about_plate--des'>
-                  <b>Designer &</b>
-                </span>
-                <span id='about_plate--dev'>
-                  <b>Developer</b>
-                </span>
-                <span id='about_plate--hand'>handcrafting</span>
-                <span id='about_plate--web'>websites & apps.</span>
-              </div>
+        <article class='note -single_note'>
+          <header class='note--header'>
+            <h1>
+              Front-end development with Nodefront
             </h1>
-          </div>
-        </div>
+            <div class='note--meta'>
+              <time datetime='2012-08-08 22:35:22 UTC'>August 2012</time>
+            </div>
+          </header>
+          <p>I&rsquo;ve just discovered <a href="http://karthikv.github.com/nodefront/">Nodefront</a>, a command-line tools, developed by <a href="http://karthikv.net">Karthik Viswanathan</a>, that ease front-end development by compiling and watching <strong>.jade</strong>, <strong>.styl</strong> and <strong>coffeescript</strong> files.</p>
+          
+          <p>Among the other features it did offer i do find the <strong>live compile</strong> option particularly useful.</p>
+          
+          <p>If you are curios here is a <a href="https://vimeo.com/46197434">screencast</a> of it in action</p>
+        </article>
       </div>
       <footer id='main_footer'>
         <ul>
@@ -92,7 +91,7 @@
         </ul>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="assets/js/application.js"></script>
-    <link href="assets/style/code.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="../assets/js/application.js"></script>
+    <link href="../assets/style/code.css" rel="stylesheet" />
   </body>
 </html>

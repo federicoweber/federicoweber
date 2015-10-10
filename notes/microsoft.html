@@ -6,10 +6,10 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href='/feed.xml' rel='alternate' type='application/atom+xml'>
     <link href='favicon.ico' rel='icon' type='image/ico'>
-    <title>Federico Weber</title>
-    <link href="assets/style/application.css" rel="stylesheet" />
+    <title>Steve Ballmer was right...</title>
+    <link href="../assets/style/application.css" rel="stylesheet" />
   </head>
-  <body class='index'>
+  <body class='notes notes_microsoft'>
     <div id='wrapper'>
       <header id='main_header'>
         <div id='main_header--content'>
@@ -22,7 +22,7 @@
                 <a href='/about_me'>about me</a>
               </li>
               <li>
-                <a href='/notes'>notes</a>
+                <a class='-active' href='/notes'>notes</a>
               </li>
               <li>
                 <a href='https://www.goodreads.com/user/show/17488758-federico'>reading</a>
@@ -33,22 +33,24 @@
         </div>
       </header>
       <div class='main_content'>
-        <div id='homepage--about'>
-          <div class='homepage--about--content'>
-            <h1 id='about_plate'>
-              <div id='about_plate--content'>
-                <span id='about_plate--des'>
-                  <b>Designer &</b>
-                </span>
-                <span id='about_plate--dev'>
-                  <b>Developer</b>
-                </span>
-                <span id='about_plate--hand'>handcrafting</span>
-                <span id='about_plate--web'>websites & apps.</span>
-              </div>
+        <article class='note -single_note'>
+          <header class='note--header'>
+            <h1>
+              Steve Ballmer was right...
             </h1>
-          </div>
-        </div>
+            <div class='note--meta'>
+              <time datetime='2012-08-03 12:47:45 UTC'>August 2012</time>
+              <a class='note--meta--source_url' href='http://arstechnica.com/information-technology/2012/08/microsoft-metro-out-windows-8-style-ui-in-amid-rumors-of-a-trademark-dispute/' title='source'>
+                <i class='fa fa-external-link'></i>
+              </a>
+            </div>
+          </header>
+          <blockquote>
+          <p>Microsoft has been using the &ldquo;Metro&rdquo; name to describe the new geometric, typography-heavy look-and-feel that is central to Windows 8—and is spreading across the company&rsquo;s entire range of products—ever since it first showed off Windows Phone.</p>
+          </blockquote>
+          
+          <p>Never ever adopt a product name that does not contain <strong>Windows</strong> in it.</p>
+        </article>
       </div>
       <footer id='main_footer'>
         <ul>
@@ -92,7 +94,7 @@
         </ul>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="assets/js/application.js"></script>
-    <link href="assets/style/code.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="../assets/js/application.js"></script>
+    <link href="../assets/style/code.css" rel="stylesheet" />
   </body>
 </html>

@@ -6,10 +6,10 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href='/feed.xml' rel='alternate' type='application/atom+xml'>
     <link href='favicon.ico' rel='icon' type='image/ico'>
-    <title>Federico Weber</title>
-    <link href="assets/style/application.css" rel="stylesheet" />
+    <title>Harvard cracks DNA storage</title>
+    <link href="../assets/style/application.css" rel="stylesheet" />
   </head>
-  <body class='index'>
+  <body class='notes notes_dna_storage'>
     <div id='wrapper'>
       <header id='main_header'>
         <div id='main_header--content'>
@@ -22,7 +22,7 @@
                 <a href='/about_me'>about me</a>
               </li>
               <li>
-                <a href='/notes'>notes</a>
+                <a class='-active' href='/notes'>notes</a>
               </li>
               <li>
                 <a href='https://www.goodreads.com/user/show/17488758-federico'>reading</a>
@@ -33,22 +33,22 @@
         </div>
       </header>
       <div class='main_content'>
-        <div id='homepage--about'>
-          <div class='homepage--about--content'>
-            <h1 id='about_plate'>
-              <div id='about_plate--content'>
-                <span id='about_plate--des'>
-                  <b>Designer &</b>
-                </span>
-                <span id='about_plate--dev'>
-                  <b>Developer</b>
-                </span>
-                <span id='about_plate--hand'>handcrafting</span>
-                <span id='about_plate--web'>websites & apps.</span>
-              </div>
+        <article class='note -single_note'>
+          <header class='note--header'>
+            <h1>
+              Harvard cracks DNA storage
             </h1>
-          </div>
-        </div>
+            <div class='note--meta'>
+              <time datetime='2012-08-18 00:00:00 UTC'>August 2012</time>
+              <a class='note--meta--source_url' href='http://www.extremetech.com/extreme/134672-harvard-cracks-dna-storage-crams-700-terabytes-of-data-into-a-single-gram' title='source'>
+                <i class='fa fa-external-link'></i>
+              </a>
+            </div>
+          </header>
+          <blockquote>
+          <p>The work, carried out by George Church and Sri Kosuri, basically treats DNA as just another digital storage device. Instead of binary data being encoded as magnetic regions on a hard drive platter, strands of DNA that store 96 bits are synthesized, with each of the bases (TGAC) representing a binary value (T and G = 1, A and C = 0).</p>
+          </blockquote>
+        </article>
       </div>
       <footer id='main_footer'>
         <ul>
@@ -92,7 +92,7 @@
         </ul>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="assets/js/application.js"></script>
-    <link href="assets/style/code.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="../assets/js/application.js"></script>
+    <link href="../assets/style/code.css" rel="stylesheet" />
   </body>
 </html>

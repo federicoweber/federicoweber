@@ -6,10 +6,10 @@
     <meta content='width=device-width, initial-scale=1' name='viewport'>
     <link href='/feed.xml' rel='alternate' type='application/atom+xml'>
     <link href='favicon.ico' rel='icon' type='image/ico'>
-    <title>Federico Weber</title>
-    <link href="assets/style/application.css" rel="stylesheet" />
+    <title>Avgrund Modal</title>
+    <link href="../assets/style/application.css" rel="stylesheet" />
   </head>
-  <body class='index'>
+  <body class='notes notes_jquery_plugins'>
     <div id='wrapper'>
       <header id='main_header'>
         <div id='main_header--content'>
@@ -22,7 +22,7 @@
                 <a href='/about_me'>about me</a>
               </li>
               <li>
-                <a href='/notes'>notes</a>
+                <a class='-active' href='/notes'>notes</a>
               </li>
               <li>
                 <a href='https://www.goodreads.com/user/show/17488758-federico'>reading</a>
@@ -33,22 +33,20 @@
         </div>
       </header>
       <div class='main_content'>
-        <div id='homepage--about'>
-          <div class='homepage--about--content'>
-            <h1 id='about_plate'>
-              <div id='about_plate--content'>
-                <span id='about_plate--des'>
-                  <b>Designer &</b>
-                </span>
-                <span id='about_plate--dev'>
-                  <b>Developer</b>
-                </span>
-                <span id='about_plate--hand'>handcrafting</span>
-                <span id='about_plate--web'>websites & apps.</span>
-              </div>
+        <article class='note -single_note'>
+          <header class='note--header'>
+            <h1>
+              Avgrund Modal
             </h1>
-          </div>
-        </div>
+            <div class='note--meta'>
+              <time datetime='2012-09-02 00:00:00 UTC'>September 2012</time>
+              <a class='note--meta--source_url' href='http://labs.voronianski.com/jquery.avgrund.js/#' title='source'>
+                <i class='fa fa-external-link'></i>
+              </a>
+            </div>
+          </header>
+          <p>Nice jQuery plugin, based on the <a href="http://lab.hakim.se/avgrund/">Avgrund</a> concept by <a href="http://hakim.se">Hakim</a>, to display a modal layers showing the depth between it and the page.  </p>
+        </article>
       </div>
       <footer id='main_footer'>
         <ul>
@@ -92,7 +90,7 @@
         </ul>
       </footer>
     </div>
-    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="assets/js/application.js"></script>
-    <link href="assets/style/code.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="../assets/js/application.js"></script>
+    <link href="../assets/style/code.css" rel="stylesheet" />
   </body>
 </html>

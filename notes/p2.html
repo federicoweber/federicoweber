@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+    <meta content='width=device-width, initial-scale=1' name='viewport'>
+    <link href='/feed.xml' rel='alternate' type='application/atom+xml'>
+    <link href='favicon.ico' rel='icon' type='image/ico'>
+    <title>Notes – Federico Weber</title>
+    <link href="../assets/style/application.css" rel="stylesheet" />
+  </head>
+  <body class='notes notes_p2'>
+    <div id='wrapper'>
+      <header id='main_header'>
+        <div id='main_header--content'>
+          <nav id='main_nav'>
+            <h1 id='main_header--title'>
+              <a href='/'>Federico Weber</a>
+            </h1>
+            <ol>
+              <li>
+                <a href='/about_me'>about me</a>
+              </li>
+              <li>
+                <a class='-active' href='/notes'>notes</a>
+              </li>
+              <li>
+                <a href='https://www.goodreads.com/user/show/17488758-federico'>reading</a>
+              </li>
+            </ol>
+            <div id='main_nav--marker'></div>
+          </nav>
+        </div>
+      </header>
+      <div class='main_content'>
+        <section id='notes'>
+          <h1 class='-hide_text'>
+            <a href='/notes'>Notes</a>
+          </h1>
+          <ol class='notes_collection'>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/programming_web.html">Validating your Local Storage Data</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-10-01 00:00:00 UTC'>October 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Local storage is a powerfull tool to cache data computed by web apps for later reuse or non critical persistency<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>. For example I do used it on a recent project, to reduce both the data loaded from the server and the computational cost of sorting a huge list of articles by filters.</p>
+                  
+                  <p>Cause the local storage will persiste on the browser for a long time to safely use this data we have to be sure that they are reliable and up to date. Usually the data can get useless for two main reasons: they are based on data produce by the server, that has been updated; or they have been stored by a previous version of the web app which data model have long changed.</p>
+                  
+                  <h2>Getting the timestamp</h2>
+                  
+                  <p>To check the data against the server a good option is to have it provide a timestamp<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> for the latest time the data have been changed. </p>
+                  
+                  <p>If the web page, is rendered by the same server we are getting the data from, we can pass this information around as a <strong>Custom data attributes</strong> in the DOM element that hold the app.</p>
+                  <pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"appHolder"</span> <span class="na">data-timestamp=</span><span class="s">"2012-10-02T20:17:08.780Z"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                  </code></pre>
+                  
+                  <p>Otherwise, if the data are coming from a different server, we can get the information as a lightweight JSON.</p>
+                  <pre class="highlight json"><code><span class="p">{</span><span class="nt">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-02T18:30:30.179Z"</span><span class="w"> </span><span class="p">}</span><span class="w">
+                  </span></code></pre>
+                  
+                  <h2>Versioning your web app</h2>
+                  
+                  <p>To match the data against an updated version of your app the best option is to have a the version number as constant in your app namespace, and save it with your data on the Local Storage.</p>
+                  <pre class="highlight javascript"><code><span class="nx">myApp</span> <span class="o">=</span> <span class="p">{};</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s2">"0.0.4"</span><span class="p">;</span>
+                  </code></pre>
+                  
+                  <h2>Wrapping it up</h2>
+                  
+                  <p>It&rsquo;s best to run this test as soon as the app is inited, if both of this test succeed you are usually safe to trust the stored data, otherwise it&rsquo;s reccomended to recreate it.</p>
+                  
+                  <p>With non critical persistency I intend any kind of data that can be reconstructed without causing damages or requiring serius effort from the end user. Like a precompiled set of filters for a search.</p>
+                  
+                  <div class="footnotes">
+                  <hr>
+                  <ol>
+                  
+                  <li id="fn1">
+                  </li>
+                  
+                  <li id="fn2">
+                  <p>Although not mandatory I reccomend you to store this data in the ISO format <em>&ldquo;2012-10-02T20:17:08.780Z&rdquo;</em> to better reuse it in javascript passing it as an argument of a new Date object.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  </ol>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/tutorial_backbone_pantarhei_javascript.html">Front end middleware with Backbone and PantaRhei</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-25 00:00:00 UTC'>September 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <h2>A middleware primer</h2>
+                  
+                  <p>The first time I&rsquo;ve stumbled upon  the middleware pattern it was in <a href="http://expressjs.com">Express.js</a>, while developing the backend for <a href="http://federicoweber.com/gestaltapp/20120625-142551-pi-3-introducinggestalt">Gestalt</a>. </p>
+                  
+                  <p>The concept of middleware it&rsquo;s quite straight forward, it&rsquo;s nothing more than a function that handle a request. What make it so interesting is the possibility to create a stack of middleware. By doing so each middleware will be able to process the request, and call the next one in the stack.</p>
+                  
+                  <p>A typical middleware will look like this:</p>
+                  <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">foo</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="c1">// all your logic goes in here</span>
+                  
+                      <span class="c1">// proceed to the next middleware</span>
+                      <span class="nx">next</span><span class="p">();</span>
+                  <span class="p">};</span>
+                  </code></pre>
+                  
+                  <p>If a middleware have to signal an error, it can do so passing it to the first argument of the next().</p>
+                  <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">bar</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+                      <span class="c1">// signal an error</span>
+                      <span class="nx">next</span><span class="p">(</span> <span class="s2">"Something went wrong!"</span> <span class="p">);</span>
+                  <span class="p">};</span>
+                  </code></pre>
+                  
+                  <p>To append a stack of middleware to a request in <a href="http://www.senchalabs.org/connect/">Connect</a> you have to declare them with the <strong>use</strong> method<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>.</p>
+                  <pre class="highlight javascript"><code><span class="c1">// Example from http://www.senchalabs.org/connect/</span>
+                  <span class="kd">var</span> <span class="nx">app</span> <span class="o">=</span> <span class="nx">connect</span><span class="p">()</span>
+                      <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">connect</span><span class="p">.</span><span class="nx">logger</span><span class="p">(</span><span class="s1">'dev'</span><span class="p">))</span>
+                      <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">connect</span><span class="p">.</span><span class="kr">static</span><span class="p">(</span><span class="s1">'public'</span><span class="p">))</span>
+                      <span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="kd">function</span><span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">){</span>
+                          <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">(</span><span class="s1">'hello world\n'</span><span class="p">);</span>
+                      <span class="p">})</span>
+                      <span class="p">.</span><span class="nx">listen</span><span class="p">(</span><span class="mi">3000</span><span class="p">);</span>
+                  </code></pre>
+                  
+                  <p>What I really like about this pattern is that by simply reading the <strong>use</strong> stack you can get a grip on the logics behind the application. Also structuring your application as a cascade of middleware you are encouraged to split it in small,  self contained, modules and avoid nasty callbacks. With the added benefit of a enhancing both the readability maintainability of your code.</p>
+                  
+                  <h2>Introducing PantaRhei.js</h2>
+                  
+                  <p><a href="http://github.com/federicoweber/PantaRhei">PantaRhei.js</a> is my front end implementation of the middleware pattern . I structured it as an extension for <a href="http://backbonejs.org">Backbone.js</a> because it is awesome, I&rsquo;m using it on the wast majority of my projects, and I want to leverage it&rsquo;s <strong>Events</strong> module and the simple inheritance style provided by the <strong>extend()</strong> method. </p>
+                  
+                  <p>PantaRhei is written in CoffeeScript and distributed with the MIT license. You can find the coffeescript sources and the compiled and minified javascript files on <a href="http://github.com/federicoweber/PantaRhei">Github</a>. </p>
+                  
+                  <p>The purpose of PantaRhei is to ease the creation and the execution of queues of tasks, like fetching and manipulating data, managing the transitions between pages and so on.
+                  Right now PantaRhei is composed by two modules: the <strong>Flow</strong>, that is responsible for the execution of the queue and the <strong>Worker</strong>, that describe one of the possible structure of middleware<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> that the Flow can handle.</p>
+                  
+                  <h3>The Worker</h3>
+                  
+                  <p>The <strong>Worker</strong> module is more a convention than a real module, and it&rsquo;s meant to be extended. 
+                  It describe two methods: the former is the <strong>run</strong> it&rsquo;s invoked by the Flow to execute the worker and accept a <strong>shared</strong> object ( which purpose is to act as a place for workers to share data ) and the <strong>next</strong> callback as arguments; the latter is the <strong>kill</strong>, that is invoked by the Flow when the worker execution is completed to safely remove it.
+                  The worker constructor also accept an option <strong>id</strong> as an argument.</p>
+                  
+                  <p>To create a new Worker you need to extend it and implement it&rsquo;s methods:</p>
+                  <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">Delay</span> <span class="o">=</span> <span class="nx">PantaRhei</span><span class="p">.</span><span class="nx">Worker</span><span class="p">.</span><span class="nx">extend</span><span class="p">({</span>
+                      <span class="na">constructor</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">duration</span><span class="p">,</span> <span class="nx">id</span><span class="p">){</span>
+                          <span class="k">this</span><span class="p">.</span><span class="nx">duration</span> <span class="o">=</span> <span class="nx">duration</span><span class="p">;</span>
+                          <span class="k">this</span><span class="p">.</span><span class="nx">id</span> <span class="o">=</span> <span class="nx">id</span><span class="p">;</span>
+                      <span class="p">},</span>
+                      <span class="na">run</span><span class="p">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">shared</span><span class="p">,</span> <span class="nx">next</span><span class="p">)</span> <span class="p">{</span>
+                          <span class="nx">onTimeout</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(){</span>
+                              <span class="nx">next</span><span class="p">();</span>
+                          <span class="p">};</span>
+                          <span class="nx">setTimeout</span><span class="p">(</span><span class="nx">onTimeout</span><span class="p">,</span> <span class="nx">duration</span><span class="p">);</span>
+                      <span class="p">},</span>
+                      <span class="na">kill</span><span class="p">:</span> <span class="kd">function</span><span class="p">(){</span>
+                          <span class="c1">// all your logics to remove the worker</span>
+                      <span class="p">}</span>
+                  <span class="p">});</span>
+                  
+                  <span class="kd">var</span> <span class="nx">shortDelay</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Delay</span><span class="p">(</span><span class="mi">1000</span><span class="p">,</span> <span class="s1">'shortDelay'</span><span class="p">);</span>
+                  </code></pre>
+                  
+                  <p>PantaRhei also include, under the PantaRhei.workers namespace, a series of workers<sup id="fnref3"><a href="#fn3" rel="footnote">3</a></sup> JsonLoader and LoadAssets.</p>
+                  
+                  <h3>The Flow</h3>
+                  
+                  <p>The <strong>Flow</strong> module is our middleware manager, and handle for you all the logic to create and run the queue.
+                  To create a new flow all you have to do is to call it&rsquo;s constructor and optionally pass two parameters: an <strong>id</strong> and a array containing the list of <strong>workers</strong> to use.</p>
+                  <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">flow</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PantaRhei</span><span class="p">.</span><span class="nx">Flow</span><span class="p">(</span> <span class="s1">'myFirstFlow'</span><span class="p">,</span> <span class="p">[</span><span class="nx">task1</span><span class="p">,</span> <span class="nx">task2</span><span class="p">]</span> <span class="p">);</span>
+                  </code></pre>
+                  
+                  <p>You can also append a worker to the flow passing it  as an argument of the <strong>use</strong> method.</p>
+                  <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">task1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">shared</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+                          <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span> <span class="s2">"task one completed"</span> <span class="p">);</span>
+                          <span class="nx">next</span><span class="p">();</span>
+                      <span class="p">},</span>
+                  <span class="nx">flow</span> <span class="o">=</span>  <span class="k">new</span> <span class="nx">PantaRhei</span><span class="p">.</span><span class="nx">Flow</span><span class="p">(</span> <span class="p">);</span>
+                  <span class="nx">flow</span><span class="p">.</span><span class="nx">use</span><span class="p">(</span><span class="nx">task1</span><span class="p">);</span>
+                  </code></pre>
+                  
+                  <p>To execute the flow you have to invoke the <strong>run</strong> method. The flow can also accept an optional <strong>shared</strong> object. This is passed around to all the workers in the queue and it&rsquo;s returned by the flow on complete, it&rsquo;s actually the place for storing and passing data between workers. If this is not provided the Flow will create a empty object to use. </p>
+                  <pre class="highlight javascript"><code><span class="c1">// create our workers</span>
+                  <span class="kd">var</span> <span class="nx">task1</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">shared</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+                      <span class="nx">shared</span><span class="p">.</span><span class="nx">data</span> <span class="o">=</span> <span class="s2">"the data have been processed"</span>
+                      <span class="nx">next</span><span class="p">();</span>
+                  <span class="p">},</span>
+                  <span class="nx">task2</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span><span class="nx">shared</span><span class="p">,</span> <span class="nx">next</span><span class="p">){</span>
+                      <span class="nx">shared</span><span class="p">.</span><span class="nx">newData</span> <span class="o">=</span> <span class="s2">"we got some new data for you"</span>
+                      <span class="nx">next</span><span class="p">();</span>
+                  <span class="p">},</span>
+                  
+                  <span class="c1">// create our flow and workers passing the first task on the constructor</span>
+                  <span class="nx">flow</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">PantaRhei</span><span class="p">.</span><span class="nx">Flow</span><span class="p">(</span>  <span class="s1">'myFirstFlow'</span><span class="p">,</span> <span class="p">[</span> <span class="nx">task1</span> <span class="p">]);</span>
+                  
+                  <span class="nx">flow</span>
+                      <span class="c1">// append the second task</span>
+                      <span class="p">.</span><span class="nx">use</span><span class="p">(</span> <span class="nx">task2</span> <span class="p">)</span>
+                      <span class="c1">// run the flow</span>
+                      <span class="p">.</span><span class="nx">run</span><span class="p">({</span><span class="na">data</span><span class="p">:</span> <span class="s2">"the data is new"</span><span class="p">});</span>
+                  </code></pre>
+                  
+                  <h4>Events</h4>
+                  
+                  <p>PantaRhei make use of the Backbone Events, so the  Flow can dispatch the following events: run, pause, resume, error and complete. Apart from the error all the other events pass the shared object as an argument to the listener.
+                  So to get notified when a flow have been successfully executed you can catch the complete event.
+                  &ldquo;`javascript
+                  var onComplete = function( shared ){
+                      console.log(shared);
+                  };</p>
+                  
+                  <p>flow
+                      .on( &lsquo;complete&rsquo;, onComplete)
+                      .run();
+                  &rdquo;`</p>
+                  
+                  <h4>Error handling</h4>
+                  
+                  <p>PantaRhei leave the responsibility to properly handle the errors to you. If any of the worker in the queue pass and error to the next callback, the Flow is paused and dispatch an <strong>error</strong> event. 
+                  Once you have  done with the error handling and you are ready to resume the flow you can call the <strong>resume</strong> method to move to the next worker in the queue.</p>
+                  <pre class="highlight javascript"><code><span class="kd">var</span> <span class="nx">onError</span> <span class="o">=</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">err</span> <span class="p">){</span>
+                      <span class="c1">//handle the error in here</span>
+                      <span class="k">this</span><span class="p">.</span><span class="nx">resume</span><span class="p">();</span>
+                  <span class="p">};</span>
+                  
+                  <span class="nx">flow</span>
+                      <span class="p">.</span><span class="nx">on</span><span class="p">(</span> <span class="s1">'error'</span><span class="p">,</span> <span class="nx">onError</span><span class="p">)</span>
+                      <span class="p">.</span><span class="nx">run</span><span class="p">();</span>
+                  </code></pre>
+                  
+                  <p>The other one is a simple function that accept as arguments the <strong>shared</strong> object and the <strong>next</strong> callback.</p>
+                  
+                  <div class="footnotes">
+                  <hr>
+                  <ol>
+                  
+                  <li id="fn1">
+                  <p>If you are looking for an introduction to the use of middle wares in Connect I suggest you to check this short <a href="http://stephensugden.com/middleware_guide/">guide</a> written by Stephen Sugden.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  <li id="fn2">
+                  </li>
+                  
+                  <li id="fn3">
+                  <p>More to follow soon.&nbsp;<a href="#fnref3" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  </ol>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/kickstarter.html">Kickstarter is not a store</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-21 00:00:00 UTC'>September 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Recently there have been a lot of disillusionment about a series of successfully backed Kickstarter projects who failed to ship. Therefor Kickstarter decide to <a href="http://www.kickstarter.com/blog/kickstarter-is-not-a-store">clarify</a> their position and enforce a new series of rules especially targeted to physical product.</p>
+                  
+                  <blockquote>
+                  <p>It&rsquo;s hard to know how many people feel like they&rsquo;re shopping at a store when they&rsquo;re backing projects on Kickstarter, but we want to make sure that it&rsquo;s no one. Today we&rsquo;re introducing a number of changes to reinforce that Kickstarter isn’t a store.</p>
+                  </blockquote>
+                  
+                  <p>While the <strong>Risks and Challenges</strong> section is a correct move, I have mixed feelings about the new measures for Hardware and Product Design projects. Surely demanding a working prototype is a step in the right direction, but completely prohibit the 3D rendering is a poor choice. And neither of this help backers to understand if the product they are going to support can be realistically manufactured. </p>
+                  
+                  <h2>Working prototype</h2>
+                  
+                  <p>A working prototype is a necessary step for the creators to figure out how o produce a real product out of their amazing concept. But it&rsquo;s not enough to assure the backers that it&rsquo;s actually possible produce the same product in large quantity, leveraging industrial facilities, neither it&rsquo;s a good estimation of the real production costs—which can also vary by a significant amount based on the number of peaces that are going to be manufactured.</p>
+                  
+                  <p>Especially for complicated products that require a combination of different technologies and draconian manufacturing and distribution lines<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>. </p>
+                  
+                  <h2>Renderings and simulations</h2>
+                  
+                  <p>The case against rendering is a complete non sense to me. Simulations and renderings are powerful tools for creators both to  design and iterate the product and to show the backers what the product it&rsquo;s going to look like and the possible colors and trim customizations.</p>
+                  
+                  <h2>Is founding cap an option?</h2>
+                  
+                  <p>An interesting point Kickstarter raise in their post is to fix to one the amount of quantities that a project can offer to a single backer.</p>
+                  
+                  <blockquote>
+                  <p>Offering multiple quantities of a reward is prohibited. Hardware and Product Design projects can only offer rewards in single quantities or a sensible set</p>
+                  </blockquote>
+                  
+                  <p>This kind of choice make sense considering that over a certain amount of product to produce it could become necessary to reconsider the entire manufacturing line—that could not be convenient probably till a new order of magnitude is reached—and keep manufacturing the product using a line produced for smaller quantity is not always possible or desirable.</p>
+                  
+                  <p>This kind of consideration also open the road to another possibility, a founding cap. Clearly this is not something Kickstarter should force to the product, most of the projects founded don&rsquo;t have real issues with over founding, but could be a nice option that the creators can decide to adopt.</p>
+                  
+                  <p>Even better would be to have <strong>progressive founding goals</strong>; it&rsquo;s quite a common practice, for creators, to promise increased sets of features based on the amount of money (over the initial founding goal) the project manage to raise<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup>. Kickstarter could officially support this kind of initiative by charging late bakers only when the next goal is reached.</p>
+                  
+                  <div class="footnotes">
+                  <hr>
+                  <ol>
+                  
+                  <li id="fn1">
+                  <p>I do honestly doubt that the <a href="http://www.kickstarter.com/projects/ouya/ouya-a-new-kind-of-video-game-console/posts/275869">Ouya</a> will ship in time for Mar 2013.&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  <li id="fn2">
+                  <p>The <a href="http://www.kickstarter.com/projects/659943965/planetary-annihilation-a-next-generation-rts">Planetary Annihilation</a> project had an interesting take on this, adding game enhancements and orchestral sound track.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  </ol>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/bag_design.html">My new tailor made leather bag</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-11 00:00:00 UTC'>September 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>My new tailor made bag, by <a href="http://www.etsy.com/shop/webag?ref=seller_info">WeBag</a>, just arrived and it&rsquo;s awesome.
+                  The quality of the materials and fabrication is excellent; it truly is the kind of product that will last forever. </p>
+                  
+                  <p><img alt="tailor made WeBag" src="http://img0.etsystatic.com/005/0/6714672/il_fullxfull.373916680_prus.jpg" /></p>
+                  
+                  <p>If you are in the market for a new leather bag you better check <a href="http://www.etsy.com/shop/webag?ref=seller_info">WeBag</a></p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/RIP_BillMoggridge.html">RIP Bill Moggridge</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-10 00:00:00 UTC'>September 2012</time>
+                    <a class='note--meta--source_url' href='http://www.guardian.co.uk/artanddesign/2012/sep/10/bill-moggridge-british-designer-laptop?newsfeed=true' title='source'>
+                      <i class='fa fa-external-link'></i>
+                    </a>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Sad but true Bill Moggridge passed away at the age of 69.
+                  Among the other things he was the designer of the first laptop. If it&rsquo;s work it&rsquo;s unknown to you please do yourself a favor and read  <a href="http://www.amazon.com/Designing-Interactions-Bill-Moggridge/dp/0262134748/ref=sr_1_1?ie=UTF8&amp;qid=1347287007&amp;sr=8-1&amp;keywords=bill+moggridge">Design Interaction</a>.</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/css3_filters_adobe.html">Adobe's CSS Shaders rolled into CSS Filter Effects Specification as an official web standard.</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-05 00:00:00 UTC'>September 2012</time>
+                    <a class='note--meta--source_url' href='http://blogs.adobe.com/webplatform/2012/08/31/css-shaders-now-in-css-filter-effects-specification/' title='source'>
+                      <i class='fa fa-external-link'></i>
+                    </a>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Great news for those among us who wish to bring more exciting effects on the web. Adobe&rsquo;s CSS Shaders proposal have been approved approved by <strong>W3C</strong>  as a part of the <a href="https://dvcs.w3.org/hg/FXTF/raw-file/tip/filters/index.html">Filter Effects</a>. 
+                  For the ones new with the matter here is an <a href="http://www.adobe.com/devnet/html5/articles/css-shaders.html">introduction</a> and a series of <a href="http://adobe.github.com/web-platform/samples/css-customfilters/">examples</a><sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup></p>
+                  
+                  <div class="footnotes">
+                  <hr>
+                  <ol>
+                  
+                  <li id="fn1">
+                  <p>A special prototype webkit browser by Adobe is required. You can download it <a href="https://github.com/downloads/adobe/webkit/PrototypeEnhancementsForChromiumMac-may2012-f2f.zip">here</a>&nbsp;<a href="#fnref1" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  </ol>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/jquery_typography.html">Fine tune your headers typography with SlabText.js</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-03 00:00:00 UTC'>September 2012</time>
+                    <a class='note--meta--source_url' href='http://www.frequency-decoder.com/demo/slabText/' title='source'>
+                      <i class='fa fa-external-link'></i>
+                    </a>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Based on Erik Loyer&rsquo;s <a href="http://erikloyer.com/index.php/blog/the_slabtype_algorithm_part_1_background/">slabtype algorithm</a> <a href="http://www.frequency-decoder.com/demo/slabText/">SlabText</a> is a nice jQuery plugin to achieve the popular slab header effect. 
+                  I especially like to be able to manually set word combinations and the possibility to set a break point, to disable the effect, if the view port reach a chosen minimum resolution.
+                  Get the source on <a href="https://github.com/freqDec/slabText/">github</a></p>
+                  
+                  <p><img alt="SlabTetx js in action" src="https://dl.dropbox.com/u/116832/federicoweber.com/20120903-113939-NT-3-jquery%20slabTetx.jpg" /></p>
+                  
+                  <p>If you are interested in javascript and typography you should also check Paravel&rsquo;s <a href="http://letteringjs.com">lettering.js</a> to fine tune each single letter of a given text.</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/jquery_plugins.html">Avgrund Modal</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-09-02 00:00:00 UTC'>September 2012</time>
+                    <a class='note--meta--source_url' href='http://labs.voronianski.com/jquery.avgrund.js/#' title='source'>
+                      <i class='fa fa-external-link'></i>
+                    </a>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Nice jQuery plugin, based on the <a href="http://lab.hakim.se/avgrund/">Avgrund</a> concept by <a href="http://hakim.se">Hakim</a>, to display a modal layers showing the depth between it and the page.  </p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/workflow_hazel_ifttt.html">From Twitter and RSS to OmniFocus</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-08-31 00:00:00 UTC'>August 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>I&rsquo;m a voracious user of Flipboard, and during my daily reading I often stumble upon news that I wish to do more with: softwares I wish to try, news to writing about, etc.
+                  To accomplish that i was using a series of <a href="http://ifttt.com">IFTTT</a> rules to send this content to my email; with the result of ending up with a quite polluted email inbox.</p>
+                  
+                  <p>Today <a href="https://twitter.com/viticci">Federico Viticci</a> published it&rsquo;s, IFTTT and <a href="http://www.noodlesoft.com/hazel.php">Hazel</a>, <a href="http://www.macstories.net/tutorials/send-favorite-tweets-to-omnifocus-inbox/">workflow</a> to save starred tweets to OmniFocus, leveraging IFTTT and Hazel.
+                  Inspired by that I&rsquo;ve created two IFTTT recipes and two Hazel rules to achieve the same for both twitter and google reader.</p>
+                  
+                  <p>The IFTTT recieps are the following:</p>
+                  
+                  <ul>
+                  <li>one for <a href="https://ifttt.com/recipes/54060">twitter</a> </li>
+                  <li>one for <a href="https://ifttt.com/recipes/54062">google reader</a></li>
+                  </ul>
+                  
+                  <p>Both are structured to create a text file inside a specified dropbox folder. The output is designed as a multiline text files.
+                  The first first of which is used as the OF entry <strong>title</strong> and the rest of the content is passed in as the <strong>note</strong>.</p>
+                  
+                  <p>The first of the Hazel rules is conceived to run an <strong>appleScript</strong> to the content of the file—to encode the text in <strong>UTF-8</strong>, parse it and create the new entry in the OmniFocus <strong>inBox</strong>.—, set the label to green (to know which files have been processed) and confirm the entry via Notification Center (using the automator action provided by <a href="http://www.automatedworkflows.com/2012/08/26/display-notification-center-alert-automator-action-1-0-0/">Automated Workflows</a>).</p>
+                  
+                  <p><img alt="The Hazel rule to watch the files" src="https://dl.dropbox.com/u/116832/federicoweber.com/20120831-205446-NT-0-hazel.png" /></p>
+                  
+                  <p>The appleScript to parse the conent:</p>
+                  <pre class="highlight plaintext"><code>-- This script is meant to be executed from Hazel
+                  -- It is used to create a new task inside omnifocus 
+                  -- The first paragraph is used for the title, the others are passed in the notes
+                  -- by Federico Weber | http://federicoweber.com
+                  
+                  on hazelProcessFile(theFile)
+                      -- get the Title of the task
+                      set content to read theFile as «class utf8»
+                      set title to first paragraph of content
+                  
+                      -- Get the note of the Task
+                      set noteContent to get replaceText(title, "", content)
+                  
+                      tell application "OmniFocus"
+                          set theDoc to first document
+                          tell theDoc
+                              make new inbox task with properties {name:title, note:noteContent}
+                          end tell
+                      end tell
+                  
+                      return true
+                  end hazelProcessFile
+                  
+                  -- replaceText method by Buce Phillis 
+                  -- http://foolsworkshop.com/applescript/2008/05/an-applescript-replace-text-method/
+                  on replaceText(find, replace, subject)
+                      set prevTIDs to text item delimiters of AppleScript
+                      set text item delimiters of AppleScript to find
+                      set subject to text items of subject
+                  
+                      set text item delimiters of AppleScript to replace
+                      set subject to "" &amp; subject
+                      set text item delimiters of AppleScript to prevTIDs
+                  
+                      return subject
+                  end replaceText
+                  </code></pre>
+                  
+                  <p>The second rules is used to erase the file after one week if the file have been properly parsed. I could have used just one rule and delete the content after it have been parsed, but I prefer to keep the files longer to fallback if something goes bad.</p>
+                  
+                  <p>If you found this useful please let me know via <a href="http://twitter.com/FedericoWeber">twitter</a> or <a href="https://alpha.app.net/federicoweber">app.net</a>.</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
+                    <a href="/notes/movie_samsara.html">Samsara</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-08-26 00:00:00 UTC'>August 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <iframe src="http://player.vimeo.com/video/46273869?title=0&amp;byline=0&amp;portrait=0&amp;color=da9315" width="657" height="274" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  
+                  <p>When I first hear about <a href="http://www.barakasamsara.com/baraka/about">Baraka</a>, almost 5 years ago, I was quite skeptical about it—96 minutes of photographs and music is not something to take lightly—but while watching it I was mesmerized by the experience and beauty of the images. And at today I still consider it one of my favorites movies of all the times.</p>
+                  
+                  <p><a href="http://www.barakasamsara.com">Samsara</a>, also directed by Ron Fricke and  produced by Mark Magidson, expand the themes developed in <a href="http://www.barakasamsara.com/baraka/about">Baraka</a> and take us on an extraordinary trip around the world  showing &ldquo;<em>the ever turning wheel of life</em>&rdquo;. 
+                  The movie have been shoot for almost five years on something like one hundred of location, spanned across twenty-five countries, and have been photographed entirely in 70mm film using a custom build motion control time-lapse camera.</p>
+                </div>
+              </article>
+            </li>
+          </ol>
+        </section>
+        <div class='notes_collection_nav'>
+          <a class='notes_collection_nav--newer' href='/notes/' title='newer notes'>
+            <i class='fa fa-calendar-plus-o'></i>
+          </a>
+          <a class='notes_collection_nav--older' href='/notes/p3.html' title='older notes'>
+            <i class='fa fa-calendar-minus-o'></i>
+          </a>
+        </div>
+      </div>
+      <footer id='main_footer'>
+        <ul>
+          <li>
+            <a href='https://github.com/federicoweber' title='github'>
+              <i class='fa fa-github'></i>
+            </a>
+          </li>
+          <li>
+            <a href='https://instagram.com/federicoweber' title='instagram'>
+              <i class='fa fa-instagram'></i>
+            </a>
+          </li>
+          <li>
+            <a href='https://www.pinterest.com/federicoweber/' title='pinterest'>
+              <i class='fa fa-pinterest'></i>
+            </a>
+          </li>
+          <li>
+            <a href='https://twitter.com/federicoweber' title='twitter'>
+              <i class='fa fa-twitter'></i>
+            </a>
+          </li>
+          <li>
+            <a href='http://federicoweber.vsco.co' title='vsco'>
+              <img src='http://assets.vsco.co/assets/images/assets/Grid_black_16.png'>
+            </a>
+          </li>
+          <li class='-with_text -push_right'>
+            <a href='mailto:federicoweber@gmail.com' title='email'>
+              <span class='text'>email me</span>
+              <i class='fa fa-envelope-o'></i>
+            </a>
+          </li>
+          <li class='-with_text'>
+            <a href='http://creativecommons.org/licenses/by-nc-sa/4.0/' title='Attribution-NonCommercial-ShareAlike 4.0 International'>
+              <span class='text'>license</span>
+              <i class='fa fa-creative-commons'></i>
+            </a>
+          </li>
+        </ul>
+      </footer>
+    </div>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script><script src="../assets/js/application.js"></script>
+    <link href="../assets/style/code.css" rel="stylesheet" />
+  </body>
+</html>
