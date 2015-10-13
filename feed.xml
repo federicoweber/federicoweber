@@ -40,10 +40,24 @@
           <id>http://federicoweber.com/notes</id>
           <link href="http://federicoweber.com/notes"/>
           <link href="http://federicoweber.com/feed.xml" rel="self"/>
-          <updated>2015-01-01T01:00:00+01:00</updated>
+          <updated>2015-10-13T15:39:00+02:00</updated>
           <author>
             <name>Blog Author</name>
           </author>
+          <entry>
+            <title>A prety scroll hijacking</title>
+            <link rel="alternate" href="http://federicoweber.com/notes/a-nice-scroll-hijacking.html"/>
+            <id>http://federicoweber.com/notes/a-nice-scroll-hijacking.html</id>
+            <published>2015-10-13T15:39:00+02:00</published>
+            <updated>2015-10-13T15:54:37+02:00</updated>
+            <author>
+              <name>Federico Weber</name>
+            </author>
+            <content type="html">&lt;p&gt;&lt;img alt="ginventory.co" src="a-nice-scroll-hijacking/ginventory.gif" /&gt;&lt;/p&gt;
+        
+        &lt;p&gt;In general, I&amp;rsquo;m not that in favor of scroll hijacking, but have to admit that this one is pretty.&lt;/p&gt;
+        </content>
+          </entry>
           <entry>
             <title>Wanderers</title>
             <link rel="alternate" href="http://federicoweber.com/notes/wanderers.html"/>
@@ -959,26 +973,6 @@
         
         &lt;p&gt;For those new with the matter Meteor is an open-source platform for building web apps in javascript. What is differentiating it from the competitors is the availability of the same APIs for both the front-end and the back-end, allowing super fast development.
         You should really take a look at the  live updating leaderboard &lt;a href="http://meteor.com/examples/leaderboard"&gt;example&lt;/a&gt;.&lt;/p&gt;
-        </content>
-          </entry>
-          <entry>
-            <title>Good design is invisible</title>
-            <link rel="alternate" href="http://federicoweber.com/notes/design.html"/>
-            <id>http://federicoweber.com/notes/design.html</id>
-            <published>2012-07-24T23:35:05+02:00</published>
-            <updated>2015-09-29T09:19:23+02:00</updated>
-            <author>
-              <name>Federico Weber</name>
-            </author>
-            <content type="html">&lt;p&gt;The Verge interviewed Oliver Reichenstein on design typography and OS GUI.&lt;/p&gt;
-        
-        &lt;p&gt;&lt;a href="https://twitter.com/iA"&gt;Oliver Reichenstein&lt;/a&gt;:&lt;/p&gt;
-        
-        &lt;blockquote&gt;
-        &lt;p&gt;Good user interface design takes care of irritations before they appear&lt;/p&gt;
-        &lt;/blockquote&gt;
-        
-        &lt;p&gt;This is something that should be true on regular basis.&lt;/p&gt;
         </content>
           </entry>
         </feed>
