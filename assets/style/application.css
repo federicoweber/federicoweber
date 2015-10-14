@@ -3186,7 +3186,7 @@ ol, ul {
       /* line 97, /Users/federicoweber/Sites/fwd/source/assets/style/_main.sass */
       .main_content p a:visited:after, .main_content p a:active:after {
         border-color: #b0b0b0; }
-    @media screen and (min-width: 1024px) {
+    @media screen and (min-width: 1023px) {
       /* line 23, /Users/federicoweber/Sites/fwd/source/assets/style/core/_mixins.sass */
       .main_content p a:hover {
         color: #FF5335; } }
@@ -3275,6 +3275,15 @@ ol, ul {
     display: -moz-flex;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-pack: center;
+    -moz-box-pack: center;
+    box-pack: center;
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+    -ms-flex-pack: center;
     -webkit-box-align: center;
     -moz-box-align: center;
     box-align: center;
@@ -3288,7 +3297,7 @@ ol, ul {
     /* line 89, /Users/federicoweber/.rvm/gems/ruby-2.2.3/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
     #main_footer ul:last-child {
       margin-right: 0; }
-    /* line 17, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+    /* line 18, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
     #main_footer ul li {
       font-size: 1.2em;
       -webkit-transition: color 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
@@ -3296,53 +3305,54 @@ ol, ul {
       transition: color 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
       display: block;
       margin-right: 1.2em; }
-      /* line 23, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+      /* line 24, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
       #main_footer ul li:last-child {
         margin-right: 0; }
-      /* line 26, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+      /* line 27, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
       #main_footer ul li a {
         color: #b0b0b0;
         -webkit-transition: color 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
         -moz-transition: color 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
         transition: color 250ms cubic-bezier(0.215, 0.61, 0.355, 1); }
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 1023px) {
           /* line 23, /Users/federicoweber/Sites/fwd/source/assets/style/core/_mixins.sass */
           #main_footer ul li a:hover {
             color: #353940;
             opacity: 1; } }
-        /* line 35, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+        /* line 36, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
         #main_footer ul li a img {
           -webkit-transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
           -moz-transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
           transition: opacity 250ms cubic-bezier(0.215, 0.61, 0.355, 1);
           opacity: 0.5;
           width: 0.83333em; }
-          @media screen and (min-width: 1024px) {
+          @media screen and (min-width: 1023px) {
             /* line 23, /Users/federicoweber/Sites/fwd/source/assets/style/core/_mixins.sass */
             #main_footer ul li a img:hover {
               opacity: 1; } }
-      /* line 43, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
-      #main_footer ul li.-push_right {
-        margin-left: auto; }
-      /* line 46, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+      @media screen and (min-width: 768px) {
+        /* line 44, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+        #main_footer ul li.-push_right {
+          margin-left: auto; } }
+      /* line 49, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
       #main_footer ul li.-with_text {
         font-size: 1.2em; }
         @media screen and (min-width: 768px) {
-          /* line 46, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+          /* line 49, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
           #main_footer ul li.-with_text {
             font-size: 0.83333em; } }
-        /* line 54, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+        /* line 57, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
         #main_footer ul li.-with_text a .text {
           display: none; }
           @media screen and (min-width: 768px) {
-            /* line 54, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+            /* line 57, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
             #main_footer ul li.-with_text a .text {
               display: inline; } }
-        /* line 58, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+        /* line 61, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
         #main_footer ul li.-with_text a .fa {
           display: inline-block; }
           @media screen and (min-width: 768px) {
-            /* line 58, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
+            /* line 61, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_footer.sass */
             #main_footer ul li.-with_text a .fa {
               display: none; } }
 
@@ -3354,10 +3364,10 @@ ol, ul {
   width: 100%;
   margin-right: 0;
   padding: 1.618em 0 1.618em 0;
-  background: #ffffff;
   -webkit-transition: box-shadow 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
   -moz-transition: box-shadow 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
-  transition: box-shadow 200ms cubic-bezier(0.215, 0.61, 0.355, 1); }
+  transition: box-shadow 200ms cubic-bezier(0.215, 0.61, 0.355, 1);
+  background: #ffffff; }
   /* line 89, /Users/federicoweber/.rvm/gems/ruby-2.2.3/gems/neat-1.7.2/app/assets/stylesheets/grid/_span-columns.scss */
   #main_header:last-child {
     margin-right: 0; }
@@ -3465,11 +3475,11 @@ ol, ul {
         /* line 84, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_header.sass */
         #main_nav > ol li a:active, #main_nav > ol li a.-active {
           color: #353940; }
-        @media screen and (min-width: 1024px) {
+        @media screen and (min-width: 1023px) {
           /* line 23, /Users/federicoweber/Sites/fwd/source/assets/style/core/_mixins.sass */
           #main_nav > ol li a:hover {
             color: #353940; } }
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 767px) {
       /* line 52, /Users/federicoweber/Sites/fwd/source/assets/style/elements/_header.sass */
       #main_nav > ol {
         cursor: pointer; }
@@ -3778,7 +3788,7 @@ a.note--meta--source_url {
   /* line 91, /Users/federicoweber/Sites/fwd/source/assets/style/pages/_notes.sass */
   a.note--meta--source_url:visited, a.note--meta--source_url:active {
     color: #b0b0b0; }
-  @media screen and (min-width: 1024px) {
+  @media screen and (min-width: 1023px) {
     /* line 23, /Users/federicoweber/Sites/fwd/source/assets/style/core/_mixins.sass */
     a.note--meta--source_url:hover {
       color: #FF5335; } }
