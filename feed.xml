@@ -5,10 +5,26 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-10-14T11:48:00+02:00</updated>
+  <updated>2015-10-17T10:35:00+02:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Ghot in the shell, Identity in Space</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/ghot-in-the-shell.html"/>
+    <id>http://federicoweber.com/notes/ghot-in-the-shell.html</id>
+    <published>2015-10-17T10:35:00+02:00</published>
+    <updated>2015-10-17T10:36:17+02:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;iframe width="658" height="370" src="http://www.youtube.com/embed/gXTnl1FVFBw" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;&amp;ldquo;all things change in a dynamic environment, your effort to remain as you are is what limits you&amp;rdquo;&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
   <entry>
     <title>Reddit AMA animated logo</title>
     <link rel="alternate" href="http://federicoweber.com/notes/reddit-ama-animated-logo.html"/>
@@ -908,35 +924,6 @@ The process of creating a graph with Chartwell is as simple as turning on the &l
 &lt;/blockquote&gt;
 
 &lt;p&gt;Never ever adopt a product name that does not contain &lt;strong&gt;Windows&lt;/strong&gt; in it.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Present and future of the App Store and Gatekeeper</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/apple_AppStore_Sandboxing.html"/>
-    <id>http://federicoweber.com/notes/apple_AppStore_Sandboxing.html</id>
-    <published>2012-07-27T00:54:11+02:00</published>
-    <updated>2015-10-10T19:43:39+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;p&gt;In a recent post, &lt;a href="http://www.marco.org/2012/07/26/mac-app-store-future"&gt;&lt;em&gt;The Mac App Store’s future of irrelevance&lt;/em&gt;&lt;/a&gt; , Marco Arment make some points on the actual state of App Store, and it&amp;rsquo;s possible future.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="@marcoarment"&gt;Marco Arment&lt;/a&gt;:&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;But now, I’ve lost all confidence that the apps I buy in the App Store today will still be there next month or next year. The advantages of buying from the App Store are mostly gone now. My confidence in the App Store, as a customer, has evaporated.&lt;/p&gt;
-
-&lt;p&gt;The Mac App Store is in significant danger of becoming an irrelevant, low-traffic flea market where buyers rarely venture for serious purchases. And I bet that’s not what Apple had in mind at all.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I believe Marco is somehow right, and unluckily for some kind of apps the best option is to buy them outside of the app store. 
-As of today the App Store, and the Gatekeeper are far from perfect and the impossibility for a developer properly market, updates and discounts. Combined with the strict sandboxing is a great obstacle for an everlasting and healthy adoption both for users and developers. &lt;/p&gt;
-
-&lt;p&gt;Yet  I do think the App Store is still a far superior shopping experience. In fact, it&amp;rsquo;s so delightful that, many of us bought the same software twice, once the App Store came out, just to have it connected to it, and relieving the pain of dealing with licenses and updates.&lt;/p&gt;
-
-&lt;p&gt;But Apple can easily fix that. For example they could grant certified developers the rights to both, use iClouds APIs and sell, on the App Store, non sandboxed apps. They can achieve this by properly marking the app and, maybe, &lt;em&gt;hiding&lt;/em&gt; it beyond an option in the Security and Privacy settings. By doing so the will ensure the security of the App Store, but also allow those of us who are willing, or need to, use non sandboxed apps to leverage it&amp;rsquo;s power and simplicity.&lt;/p&gt;
-
-&lt;p&gt;Also I do believe that on the long run, as it&amp;rsquo;s happing on the iOS, the terms and conditions, for an app to be considered sandboxed, will get more flexible. Allowing more of them to jump in.&lt;/p&gt;
 </content>
   </entry>
 </feed>
