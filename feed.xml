@@ -5,10 +5,27 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-10-17T10:35:00+02:00</updated>
+  <updated>2015-10-21T14:37:00+02:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>100 day calligraphy challenge</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/100-day-calligraphy-challenge.html"/>
+    <id>http://federicoweber.com/notes/100-day-calligraphy-challenge.html</id>
+    <published>2015-10-21T14:37:00+02:00</published>
+    <updated>2015-10-21T14:50:25+02:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;a href="https://instagram.com/p/9F_4CTDv76/?taken-by=federicoweber"&gt;&lt;img alt="An ounce of practice is generally worth more than a ton of theory." src="100-day-calligraphy-challenge/20151021-143849-nt-1-calligraphy.jpg" /&gt;
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;A couple of years ago I started learning to write in &lt;a href="https://www.wikiwand.com/en/Italic_type"&gt;Italic&lt;/a&gt;. But after the initial period of dedicated study, I practiced it less and less.
+To get better at it, I decided to start a &lt;strong&gt;100 day calligraphy challenge&lt;/strong&gt;.
+You can follow my progress in &lt;a href="https://instagram.com/federicoweber/"&gt;instagram&lt;/a&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Ghost in the shell, Identity in Space</title>
     <link rel="alternate" href="http://federicoweber.com/notes/ghost-in-the-shell.html"/>
@@ -908,22 +925,6 @@ The process of creating a graph with Chartwell is as simple as turning on the &l
 &lt;p&gt;Among the other features it did offer i do find the &lt;strong&gt;live compile&lt;/strong&gt; option particularly useful.&lt;/p&gt;
 
 &lt;p&gt;If you are curios here is a &lt;a href="https://vimeo.com/46197434"&gt;screencast&lt;/a&gt; of it in action&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Steve Ballmer was right...</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/microsoft.html"/>
-    <id>http://federicoweber.com/notes/microsoft.html</id>
-    <published>2012-08-03T14:47:45+02:00</published>
-    <updated>2015-09-29T09:19:04+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;blockquote&gt;
-&lt;p&gt;Microsoft has been using the &amp;ldquo;Metro&amp;rdquo; name to describe the new geometric, typography-heavy look-and-feel that is central to Windows 8—and is spreading across the company&amp;rsquo;s entire range of products—ever since it first showed off Windows Phone.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;Never ever adopt a product name that does not contain &lt;strong&gt;Windows&lt;/strong&gt; in it.&lt;/p&gt;
 </content>
   </entry>
 </feed>
