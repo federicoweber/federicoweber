@@ -5,10 +5,24 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-10-21T14:37:00+02:00</updated>
+  <updated>2015-10-24T12:41:00+02:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Setting the website typography with webfonter</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/setting-the-website-typography-with-webfonter.html"/>
+    <id>http://federicoweber.com/notes/setting-the-website-typography-with-webfonter.html</id>
+    <published>2015-10-24T12:41:00+02:00</published>
+    <updated>2015-10-24T12:53:32+02:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="webfonter Chrome extension" src="setting-the-website-typography-with-webfonter/20151024_123806_Screenshot.png" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Just discovered fontshop.com &lt;a href="https://webfonter.fontshop.com/"&gt;Webfonter&lt;/a&gt; Chrome extension. A neat solution to browse and experiment with the shop extensive catalog, directly on the website you are building. Among the various features it supports: &lt;em&gt;custom CSS selectors&lt;/em&gt; and save the configuration in the &lt;em&gt;Local Storage&lt;/em&gt;.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>100 day calligraphy challenge</title>
     <link rel="alternate" href="http://federicoweber.com/notes/100-day-calligraphy-challenge.html"/>
@@ -909,22 +923,6 @@ The process of creating a graph with Chartwell is as simple as turning on the &l
 &lt;p&gt;Beautiful tech demo of the amazing scenery and graphics in Crysis 3 powerd by CryEngine3.&lt;/p&gt;
 
 &lt;p&gt;Also make sure to watch the Official single player interactive &lt;a href="http://www.youtube.com/watch?v=_2LX8bEmhDc&amp;amp;feature=player_embedded"&gt;demo&lt;/a&gt;&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Front-end development with Nodefront</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/frontend_development_tool_node_front.html"/>
-    <id>http://federicoweber.com/notes/frontend_development_tool_node_front.html</id>
-    <published>2012-08-09T00:35:22+02:00</published>
-    <updated>2015-10-10T19:43:39+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;p&gt;I&amp;rsquo;ve just discovered &lt;a href="http://karthikv.github.com/nodefront/"&gt;Nodefront&lt;/a&gt;, a command-line tools, developed by &lt;a href="http://karthikv.net"&gt;Karthik Viswanathan&lt;/a&gt;, that ease front-end development by compiling and watching &lt;strong&gt;.jade&lt;/strong&gt;, &lt;strong&gt;.styl&lt;/strong&gt; and &lt;strong&gt;coffeescript&lt;/strong&gt; files.&lt;/p&gt;
-
-&lt;p&gt;Among the other features it did offer i do find the &lt;strong&gt;live compile&lt;/strong&gt; option particularly useful.&lt;/p&gt;
-
-&lt;p&gt;If you are curios here is a &lt;a href="https://vimeo.com/46197434"&gt;screencast&lt;/a&gt; of it in action&lt;/p&gt;
 </content>
   </entry>
 </feed>
