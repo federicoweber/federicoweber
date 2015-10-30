@@ -44,6 +44,25 @@
               <article class='note'>
                 <header class='note--header'>
                   <h1>
+                    <a href="/notes/quote.html">Digital Literacy</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-07-19 21:44:04 UTC'>July 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Alan Kay, <em>“User Interface: A Personal View”</em>:</p>
+                  
+                  <blockquote>
+                  <p>The ability to “read” a medium means you can access materials and tools created by others. The ability to “write” in a medium means you can generate materials and tools for others. You must have both to be literate. </p>
+                  </blockquote>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
                     <a href="/notes/opensource_cURL.html">HTTPie - cURL for humans</a>
                   </h1>
                   <div class='note--meta'>
@@ -363,83 +382,6 @@
                   <p>Google have just released Chrome for iOS on the <a href="http://itunes.apple.com/us/app/chrome/id535886823">App Store</a>.
                   Unfortunately it&rsquo;s not running on v8, Apple is not allowing that, and it&rsquo;s significatively slower than mobile safari. Still it do pack some interesting features. Like the unified address and search bar, and the synchronization of  current opened tabs between multiple devices.
                   <img src="https://dl.dropbox.com/u/116832/federicoweber.com/20120628-221534-NT-0-ios-chrome.png" /></p>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class='note'>
-                <header class='note--header'>
-                  <h1>
-                    <a href="/notes/workFlow_notes_hazel_automation.html">My mobile notes taking workflow</a>
-                  </h1>
-                  <div class='note--meta'>
-                    <time datetime='2012-06-28 18:33:02 UTC'>June 2012</time>
-                  </div>
-                </header>
-                <div class='article--body'>
-                  <p>When I stumbled upon <a href="http://agiletortoise.com/drafts">Drafts</a>, by Agile Tortoise, I dediced to use it as my mobile note taking app. My choise was dictated by three main reasons:</p>
-                  
-                  <ul>
-                  <li>it&rsquo;s among the fastest writing app on iOS, ready to write as soon as you start it</li>
-                  <li>it support textExpander</li>
-                  <li>it can save the entries to dropbox</li>
-                  </ul>
-                  
-                  <h2>Integrate it in the overall workflow</h2>
-                  
-                  <p>The only problem was to integrate it within my workflow.
-                  On the mac I am an <a href="http://brettterpstra.com/project/nvalt/">nvAlt</a> user and I&rsquo;m also using a strict naming convention for my files.
-                  More or less all my notes files names look like this <strong>20120628-193211-NT-0-tag</strong>, where the third element <em>NT</em> is the type of the file, in this case a <em>note</em>. Unfortunately drafts did not allow me to specify the file name and it can only save the file on the sandboxed <em>/Apps/Drafts</em> folder inside dropbox.</p>
-                  
-                  <h2>Hazel comes to rescue</h2>
-                  
-                  <p>I did fixed that with the help of <a href="http://smilesoftware.com/TextExpander/">TextExpander</a>, <a href="http://www.noodlesoft.com/hazel.php">Hazel</a> and a little bit of appleScript.</p>
-                  
-                  <p>The file name problem is solved using the first paragraph of the note to write it down, the date is included thanks to TextExpander.</p>
-                  
-                  <p>Then on the mac i do have an hazel rule that watch the file content for the notes related tokens, run an appleScipt on it and finally move the files to my main notes folder.
-                  <img src="https://dl.dropbox.com/u/116832/federicoweber.com/20120628-195122-SP-1-workflow%20hazel.jpg" /></p>
-                  
-                  <p>Here is the script. I think it can be done better, but I&rsquo;ve just started learning appleScript.</p>
-                  <pre class="highlight plaintext"><code>-- This script is meant to be executed from Hazel
-                  -- it will change the file name to the first paragraph 
-                  -- set the extension to .md
-                  -- and delete the filename from the file content
-                  -- by Federico Weber | http://federicoweber.com
-                  
-                  on hazelProcessFile(theFile)
-                      -- get the file name
-                      set content to read theFile
-                      set newFileName to first paragraph of content
-                  
-                      -- rename the file
-                      tell application "Finder"
-                          set name of theFile to newFileName &amp; ".md"
-                      end tell
-                  
-                      -- delete the name of the file from the content 
-                      set newContent to get replaceText(newFileName, "", content)
-                      set openFile to open for access theFile with write permission
-                      set eof of openFile to 0
-                      write newContent to openFile starting at eof as text
-                      close access openFile
-                      return true
-                  end hazelProcessFile
-                  
-                  -- replaceText method by Buce Phillis 
-                  -- http://foolsworkshop.com/applescript/2008/05/an-applescript-replace-text-method/
-                  on replaceText(find, replace, subject)
-                      set prevTIDs to text item delimiters of AppleScript
-                      set text item delimiters of AppleScript to find
-                      set subject to text items of subject
-                  
-                      set text item delimiters of AppleScript to replace
-                      set subject to "" &amp; subject
-                      set text item delimiters of AppleScript to prevTIDs
-                  
-                      return subject
-                  end replaceText
-                  </code></pre>
                 </div>
               </article>
             </li>
