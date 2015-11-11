@@ -5,10 +5,24 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-10-30T16:32:00+01:00</updated>
+  <updated>2015-11-11T20:31:00+01:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Adidas futurecraft leather</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/adidas-futurecraft-leather.html"/>
+    <id>http://federicoweber.com/notes/adidas-futurecraft-leather.html</id>
+    <published>2015-11-11T20:31:00+01:00</published>
+    <updated>2015-11-11T20:36:01+01:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;iframe width="658" height="370" src="http://www.youtube.com/embed/Cl84LnbXb04" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Adidas milled one continuous piece of leather, to various thickness, to form the upper of this shoe.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Op – experimental optical film</title>
     <link rel="alternate" href="http://federicoweber.com/notes/op-experimental-film.html"/>
@@ -902,25 +916,6 @@ I would like to see what will happen if those apps implement support for other s
       <name>Federico Weber</name>
     </author>
     <content type="html">&lt;iframe src="http://player.vimeo.com/video/44742356?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;color=f2de05" width="657" height="369" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
-</content>
-  </entry>
-  <entry>
-    <title>An OpenType hack to design simple graphs</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/typography_graph.html"/>
-    <id>http://federicoweber.com/notes/typography_graph.html</id>
-    <published>2012-08-14T02:00:00+02:00</published>
-    <updated>2015-10-10T19:43:39+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;p&gt;Designed by &lt;a href="https://twitter.com/traviskochel"&gt;@traviskochel&lt;/a&gt; &lt;a href="https://www.fontfont.com/how-to-use-ff-chartwell"&gt;FF Chartwell&lt;/a&gt; is a smart font hack that leverage the OpenType features to convert numbers into graphs.
-The process of creating a graph with Chartwell is as simple as turning on the &lt;em&gt;Stylistic Alternates&lt;/em&gt;. By doing so a series of, plus separated, numbers are converted into the corresponding graph.&lt;/p&gt;
-
-&lt;p&gt;&lt;img alt="FF Chartwell Radar" src="https://www.fontfont.com/staticcontent/inuseimages/original/FF_Chartwell_SC-all_7_symbols-Radar.png?1336379581" /&gt;&lt;/p&gt;
-
-&lt;p&gt;It&amp;rsquo;s possible to create the following type of graphs: bars vertical, bars horizontal, lines, pies, radar, rings, rose.&lt;/p&gt;
-
-&lt;p&gt;The font is quite useful as it is and the guys at &lt;a href="https://www.fontfont.com/"&gt;FontFont&lt;/a&gt; are already working on a web version of it.&lt;/p&gt;
 </content>
   </entry>
 </feed>
