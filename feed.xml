@@ -5,10 +5,26 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-11-11T20:31:00+01:00</updated>
+  <updated>2015-11-30T18:08:00+01:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>10 Years Of Daylight and Darkness Visualized</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/10-years-of-daylight-and-darkness-visualized.html"/>
+    <id>http://federicoweber.com/notes/10-years-of-daylight-and-darkness-visualized.html</id>
+    <published>2015-11-30T18:08:00+01:00</published>
+    <updated>2015-11-30T18:15:47+01:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Light Calendars" src="10-years-of-daylight-and-darkness-visualized/3053577-slide-s-3-tenyearsoflight03.gif" /&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+&lt;p&gt;For its annual &amp;ldquo;Light Calendars,&amp;rdquo; London-based design studio &lt;a href="http://acceptandproceed.com/"&gt;Accept &amp;amp; Proceed&lt;/a&gt; visualizes the fluctuating length of daylight for each passing year with a series of stunningly detailed black and white prints&lt;/p&gt;
+&lt;/blockquote&gt;
+</content>
+  </entry>
   <entry>
     <title>Adidas futurecraft leather</title>
     <link rel="alternate" href="http://federicoweber.com/notes/adidas-futurecraft-leather.html"/>
@@ -904,18 +920,6 @@ I would like to see what will happen if those apps implement support for other s
 
 &lt;/ol&gt;
 &lt;/div&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Robot &amp; Frank</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/film.html"/>
-    <id>http://federicoweber.com/notes/film.html</id>
-    <published>2012-08-16T02:00:00+02:00</published>
-    <updated>2015-09-29T09:18:45+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;iframe src="http://player.vimeo.com/video/44742356?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;color=f2de05" width="657" height="369" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
 </content>
   </entry>
 </feed>
