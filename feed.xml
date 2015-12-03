@@ -5,10 +5,24 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-11-30T18:08:00+01:00</updated>
+  <updated>2015-12-03T18:11:00+01:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Social network illustrated by Ivan Belikov</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/social-network-illustrated-by-ivan-belikov.html"/>
+    <id>http://federicoweber.com/notes/social-network-illustrated-by-ivan-belikov.html</id>
+    <published>2015-12-03T18:11:00+01:00</published>
+    <updated>2015-12-03T18:19:28+01:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;p&gt;&lt;img alt="Twitter Illustration by Ivan Belikov" src="social-network-illustrated-by-ivan-belikov/social-networks-illustration-twitter.jpg" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Fantastic series of illustrations potraiting social networks by &lt;a href="https://www.behance.net/so_static"&gt;Ivan Belikov&lt;/a&gt;&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>10 Years Of Daylight and Darkness Visualized</title>
     <link rel="alternate" href="http://federicoweber.com/notes/10-years-of-daylight-and-darkness-visualized.html"/>
@@ -856,70 +870,6 @@ Being a long time supporter&lt;sup id="fnref2"&gt;&lt;a href="#fn2" rel="footnot
     <content type="html">&lt;blockquote&gt;
 &lt;p&gt;The work, carried out by George Church and Sri Kosuri, basically treats DNA as just another digital storage device. Instead of binary data being encoded as magnetic regions on a hard drive platter, strands of DNA that store 96 bits are synthesized, with each of the bases (TGAC) representing a binary value (T and G = 1, A and C = 0).&lt;/p&gt;
 &lt;/blockquote&gt;
-</content>
-  </entry>
-  <entry>
-    <title>The dusk of Twitter as a platform</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/Twitter.html"/>
-    <id>http://federicoweber.com/notes/Twitter.html</id>
-    <published>2012-08-17T02:00:00+02:00</published>
-    <updated>2015-09-29T09:18:40+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;p&gt;Yesterday, &lt;a href="https://twitter.com/sippey"&gt;Michael Sippey&lt;/a&gt;, the Director of consumer product at Twitter, &lt;a href="https://dev.twitter.com/blog/changes-coming-to-twitter-api"&gt;announced&lt;/a&gt; some obscure changes in the upcoming v1.1 of the Twitter API.
-The majority of which is related to limit the API availability to third party clients.&lt;/p&gt;
-
-&lt;h2&gt;The dusk of the platform&lt;/h2&gt;
-
-&lt;p&gt;What was great about Twitter was it’s openness, simplicity, and it’s reliability&lt;sup id="fnref1"&gt;&lt;a href="#fn1" rel="footnote"&gt;1&lt;/a&gt;&lt;/sup&gt;.
-But right now, in order to be independent, Twitter have to make money. And in the process of reshaping the company they figured out that, to be appealing for advertisers, they have to control the entire user experience, becoming the endpoint of the discussion and not just the vector. They need to be sure that the advertisement they sell will arrive to the users and they can achieve this only with a strict control on what their users see. They decided to do so by prohibiting new third party clients.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;Nearly eighteen months ago, we gave developers guidance that they should not build client apps that mimic or reproduce the mainstream Twitter consumer client experience. &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As far as there is an existing Twitter interface for that specific platform. In fact Twitter is still welcoming to &lt;em&gt;officially approved&lt;/em&gt;, native mobile client.&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;With v1.1 we will require developers that are building client applications that are pre-installed on mobile handsets, SIM cards, chipsets or other consumer electronics devices to have their application certified by Twitter.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;By making the old ones choke in their user base&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;if you are building a Twitter client application that is accessing the home timeline, account settings or direct messages API endpoints (typically used by traditional client applications) or are using our User Streams product, you will need our permission if your application will require more than 100,000 individual user tokens.&lt;/p&gt;
-
-&lt;p&gt;We will not be shutting down client applications that use those endpoints and are currently over those token limits. If your application already has more than 100,000 individual user tokens, you&amp;rsquo;ll be able to maintain and add new users to your application until you reach 200% of your current user token count (as of today) — as long as you comply with our Rules of the Road. Once you reach 200% of your current user token count, you&amp;rsquo;ll be able to maintain your application to serve your users, but you will not be able to add additional users without our permission.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;And by prohibiting integration with different social networks&lt;/p&gt;
-
-&lt;blockquote&gt;
-&lt;p&gt;No other social or 3rd party actions may be attached to a Tweet. &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2&gt;The dawn of the apps&lt;/h2&gt;
-
-&lt;p&gt;I consider myself more a Tweetbot user than a Twitter user, and I do believe that like me many other users are more tightened to the apps they do use daily to interact with twitter than with the platform itself. 
-I would like to see what will happen if those apps implement support for other similar platforms &lt;sup id="fnref2"&gt;&lt;a href="#fn2" rel="footnote"&gt;2&lt;/a&gt;&lt;/sup&gt;. I will surely appreciate.&lt;/p&gt;
-
-&lt;p&gt;The lightweight structure of the tweet data, make it extremely fast to load even on congested or slow network.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://app.net"&gt;App.net&lt;/a&gt; got founded in the last days, the alpha version is running and it&amp;rsquo;s more than a valid candidate.&lt;/p&gt;
-
-&lt;div class="footnotes"&gt;
-&lt;hr&gt;
-&lt;ol&gt;
-
-&lt;li id="fn1"&gt;
-&lt;/li&gt;
-
-&lt;li id="fn2"&gt;
-&lt;/li&gt;
-
-&lt;/ol&gt;
-&lt;/div&gt;
 </content>
   </entry>
 </feed>
