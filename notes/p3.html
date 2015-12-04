@@ -44,6 +44,61 @@
               <article class='note'>
                 <header class='note--header'>
                   <h1>
+                    <a href="/notes/programming_web.html">Validating your Local Storage Data</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-10-01 00:00:00 UTC'>October 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <p>Local storage is a powerfull tool to cache data computed by web apps for later reuse or non critical persistency<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>. For example I do used it on a recent project, to reduce both the data loaded from the server and the computational cost of sorting a huge list of articles by filters.</p>
+                  
+                  <p>Cause the local storage will persiste on the browser for a long time to safely use this data we have to be sure that they are reliable and up to date. Usually the data can get useless for two main reasons: they are based on data produce by the server, that has been updated; or they have been stored by a previous version of the web app which data model have long changed.</p>
+                  
+                  <h2>Getting the timestamp</h2>
+                  
+                  <p>To check the data against the server a good option is to have it provide a timestamp<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> for the latest time the data have been changed. </p>
+                  
+                  <p>If the web page, is rendered by the same server we are getting the data from, we can pass this information around as a <strong>Custom data attributes</strong> in the DOM element that hold the app.</p>
+                  <pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"appHolder"</span> <span class="na">data-timestamp=</span><span class="s">"2012-10-02T20:17:08.780Z"</span><span class="nt">&gt;&lt;/div&gt;</span>
+                  </code></pre>
+                  
+                  <p>Otherwise, if the data are coming from a different server, we can get the information as a lightweight JSON.</p>
+                  <pre class="highlight json"><code><span class="p">{</span><span class="nt">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-02T18:30:30.179Z"</span><span class="w"> </span><span class="p">}</span><span class="w">
+                  </span></code></pre>
+                  
+                  <h2>Versioning your web app</h2>
+                  
+                  <p>To match the data against an updated version of your app the best option is to have a the version number as constant in your app namespace, and save it with your data on the Local Storage.</p>
+                  <pre class="highlight javascript"><code><span class="nx">myApp</span> <span class="o">=</span> <span class="p">{};</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s2">"0.0.4"</span><span class="p">;</span>
+                  </code></pre>
+                  
+                  <h2>Wrapping it up</h2>
+                  
+                  <p>It&rsquo;s best to run this test as soon as the app is inited, if both of this test succeed you are usually safe to trust the stored data, otherwise it&rsquo;s reccomended to recreate it.</p>
+                  
+                  <p>With non critical persistency I intend any kind of data that can be reconstructed without causing damages or requiring serius effort from the end user. Like a precompiled set of filters for a search.</p>
+                  
+                  <div class="footnotes">
+                  <hr>
+                  <ol>
+                  
+                  <li id="fn1">
+                  </li>
+                  
+                  <li id="fn2">
+                  <p>Although not mandatory I reccomend you to store this data in the ISO format <em>&ldquo;2012-10-02T20:17:08.780Z&rdquo;</em> to better reuse it in javascript passing it as an argument of a new Date object.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
+                  </li>
+                  
+                  </ol>
+                  </div>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
                     <a href="/notes/tutorial_backbone_pantarhei_javascript.html">Front end middleware with Backbone and PantaRhei</a>
                   </h1>
                   <div class='note--meta'>
@@ -474,58 +529,6 @@
                   
                   <p><a href="http://www.barakasamsara.com">Samsara</a>, also directed by Ron Fricke and  produced by Mark Magidson, expand the themes developed in <a href="http://www.barakasamsara.com/baraka/about">Baraka</a> and take us on an extraordinary trip around the world  showing &ldquo;<em>the ever turning wheel of life</em>&rdquo;. 
                   The movie have been shoot for almost five years on something like one hundred of location, spanned across twenty-five countries, and have been photographed entirely in 70mm film using a custom build motion control time-lapse camera.</p>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class='note'>
-                <header class='note--header'>
-                  <h1>
-                    <a href="/notes/IL_digitalMagazines.html">IL magazine landed on the iPad, and it's awful</a>
-                  </h1>
-                  <div class='note--meta'>
-                    <time datetime='2012-08-23 00:00:00 UTC'>August 2012</time>
-                  </div>
-                </header>
-                <div class='article--body'>
-                  <p>This morning I was looking at twitter feed and I did stumbled upon a tweet from [Francesco Franchi]<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>, announcing that the <strong>IL</strong> magazine is finally on the iPad Newsstand and that the current issue it&rsquo;s available for download.
-                  Being a long time supporter<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup>, I was more than excited about it, imagining the incredible things the staff have pulled out leveraging the possibilities offered by the iPad—Especially considering the intensive use of info-graphics the magazine do, that lead them to won a more than rewarding list of awards, including a <em>Compasso D&#39;oro</em>—. And I decided to welcomely spend the increased price<sup id="fnref3"><a href="#fn3" rel="footnote">3</a></sup> to enjoy the experience of reading it on my iPad.</p>
-                  
-                  <p><img alt="IL August cover on the iPad" src="https://dl.dropbox.com/u/116832/federicoweber.com/Photo%2023-08-12%2013%2017%2014.png" /></p>
-                  
-                  <p>Unfortunately the magazine is not only far for great—not featuring any interactive content—but it&rsquo; completely awful. Residing in that terrible editorial space defined by those magazine that, in order to quickly get to the iPad, are presented as a collection of static images and neither went through the effort of adapting the content to the different ration of the layout.</p>
-                  
-                  <p>This was bad enough when the first iPad magazines comes out, almost two years ago. But if an awarded magazine like <strong>IL</strong> pull out something so poor in quality, and charge a premium price for it, I do fell steamed.</p>
-                  
-                  <p><img alt="poor pages alignment" src="https://dl.dropbox.com/u/116832/federicoweber.com/Photo%2023-08-12%2014%2003%2007.png?w=1f396c19" /></p>
-                  
-                  <p>I do really want to read the current issue properly, so right now I&rsquo;m heading to the nearest newsagent to buy a paper version of the magazine, and i suggest you to do the same. Or better completely skip the digital one if you haven&rsquo;t bought it yet.</p>
-                  
-                  <p>For the future I will patiently wait for a proper digital edition that I&rsquo;m sure <em>Il Sole 24 Ore</em> have the expertise—being also the publisher of the nice and free iPad magazine <a href="http://itunes.apple.com/it/app/la-vita-nova/id395924638?mt=8">la vita nòva</a>— and the willingness to craft for us.</p>
-                  
-                  <p><img alt="rane" src="https://dl.dropbox.com/u/116832/federicoweber.com/Photo%2023-08-12%2013%2018%2010.png?w=750ef65b" /></p>
-                  
-                  <p>The current art director of the  IL magazine</p>
-                  
-                  <p>I&rsquo;m regularly collecting the IL magazine since 2009, and I&rsquo;ve always been pleased by it&rsquo;s content quality and it&rsquo;s extraordinary visual appeal.</p>
-                  
-                  <p>The regular price, for the paper edition, is € 2,00 if you buy it with <em>Il Sole 24 Ore</em>, the day it is published, or € 0,50 from the day after. The price for the iPad version is € 2,39.</p>
-                  
-                  <div class="footnotes">
-                  <hr>
-                  <ol>
-                  
-                  <li id="fn1">
-                  </li>
-                  
-                  <li id="fn2">
-                  </li>
-                  
-                  <li id="fn3">
-                  </li>
-                  
-                  </ol>
-                  </div>
                 </div>
               </article>
             </li>

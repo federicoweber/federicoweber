@@ -44,6 +44,30 @@
               <article class='note'>
                 <header class='note--header'>
                   <h1>
+                    <a href="/notes/wanderers.html">Wanderers</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2015-01-01 00:00:00 UTC'>January 2015</time>
+                    <a class='note--meta--source_url' href='http://www.erikwernquist.com/wanderers' title='source'>
+                      <i class='fa fa-external-link'></i>
+                    </a>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <iframe src="http://player.vimeo.com/video/108650530?color=ffffff" width="658" height="370" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
+                  
+                  <blockquote>
+                  <p>“As for me, I am tormented with an everlasting itch for things remote. I love to sail forbidden seas, and land on barbarous coasts.”</p>
+                  </blockquote>
+                  
+                  <p>Wanderers - a short film by Erik Wernquist</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
                     <a href="/notes/EC2_nodejitsu_server_gestalt.html">Migrating from Amazon EC2 to Nodejitsu PaaS</a>
                   </h1>
                   <div class='note--meta'>
@@ -281,61 +305,6 @@
                 </header>
                 <div class='article--body'>
                   <iframe src="http://player.vimeo.com/video/43005056?title=0&amp;byline=0&amp;portrait=0&amp;color=ffffff" width="657" height="369" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-                </div>
-              </article>
-            </li>
-            <li>
-              <article class='note'>
-                <header class='note--header'>
-                  <h1>
-                    <a href="/notes/programming_web.html">Validating your Local Storage Data</a>
-                  </h1>
-                  <div class='note--meta'>
-                    <time datetime='2012-10-01 00:00:00 UTC'>October 2012</time>
-                  </div>
-                </header>
-                <div class='article--body'>
-                  <p>Local storage is a powerfull tool to cache data computed by web apps for later reuse or non critical persistency<sup id="fnref1"><a href="#fn1" rel="footnote">1</a></sup>. For example I do used it on a recent project, to reduce both the data loaded from the server and the computational cost of sorting a huge list of articles by filters.</p>
-                  
-                  <p>Cause the local storage will persiste on the browser for a long time to safely use this data we have to be sure that they are reliable and up to date. Usually the data can get useless for two main reasons: they are based on data produce by the server, that has been updated; or they have been stored by a previous version of the web app which data model have long changed.</p>
-                  
-                  <h2>Getting the timestamp</h2>
-                  
-                  <p>To check the data against the server a good option is to have it provide a timestamp<sup id="fnref2"><a href="#fn2" rel="footnote">2</a></sup> for the latest time the data have been changed. </p>
-                  
-                  <p>If the web page, is rendered by the same server we are getting the data from, we can pass this information around as a <strong>Custom data attributes</strong> in the DOM element that hold the app.</p>
-                  <pre class="highlight html"><code><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"appHolder"</span> <span class="na">data-timestamp=</span><span class="s">"2012-10-02T20:17:08.780Z"</span><span class="nt">&gt;&lt;/div&gt;</span>
-                  </code></pre>
-                  
-                  <p>Otherwise, if the data are coming from a different server, we can get the information as a lightweight JSON.</p>
-                  <pre class="highlight json"><code><span class="p">{</span><span class="nt">"updated"</span><span class="p">:</span><span class="w"> </span><span class="s2">"2012-10-02T18:30:30.179Z"</span><span class="w"> </span><span class="p">}</span><span class="w">
-                  </span></code></pre>
-                  
-                  <h2>Versioning your web app</h2>
-                  
-                  <p>To match the data against an updated version of your app the best option is to have a the version number as constant in your app namespace, and save it with your data on the Local Storage.</p>
-                  <pre class="highlight javascript"><code><span class="nx">myApp</span> <span class="o">=</span> <span class="p">{};</span> <span class="nx">myApp</span><span class="p">.</span><span class="nx">VERSION</span> <span class="o">=</span> <span class="s2">"0.0.4"</span><span class="p">;</span>
-                  </code></pre>
-                  
-                  <h2>Wrapping it up</h2>
-                  
-                  <p>It&rsquo;s best to run this test as soon as the app is inited, if both of this test succeed you are usually safe to trust the stored data, otherwise it&rsquo;s reccomended to recreate it.</p>
-                  
-                  <p>With non critical persistency I intend any kind of data that can be reconstructed without causing damages or requiring serius effort from the end user. Like a precompiled set of filters for a search.</p>
-                  
-                  <div class="footnotes">
-                  <hr>
-                  <ol>
-                  
-                  <li id="fn1">
-                  </li>
-                  
-                  <li id="fn2">
-                  <p>Although not mandatory I reccomend you to store this data in the ISO format <em>&ldquo;2012-10-02T20:17:08.780Z&rdquo;</em> to better reuse it in javascript passing it as an argument of a new Date object.&nbsp;<a href="#fnref2" rev="footnote">&#8617;</a></p>
-                  </li>
-                  
-                  </ol>
-                  </div>
                 </div>
               </article>
             </li>
