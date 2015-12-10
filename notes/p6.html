@@ -44,6 +44,74 @@
               <article class='note'>
                 <header class='note--header'>
                   <h1>
+                    <a href="/notes/automation.html">bootstrapping projects</a>
+                  </h1>
+                  <div class='note--meta'>
+                    <time datetime='2012-07-17 14:03:46 UTC'>July 2012</time>
+                  </div>
+                </header>
+                <div class='article--body'>
+                  <h2>Automate project creation</h2>
+                  
+                  <p>Lately I&rsquo;m doing a lot of small web projects that, more ore less, have the same folder structure, are based on the same framework, and leverage the same version control system, clearly <strong>Git</strong>.
+                  Therefore I&rsquo;ve decided to spend some time to automate the project setup process.</p>
+                  
+                  <h2>Meet projectBootstrap</h2>
+                  
+                  <p>The result of my tinkering is <a href="https://github.com/federicoweber/projectBootstrap">projectBootstrap</a>, a small script in <strong>node.js</strong>, that given a target folder and a configuration file. Take care of populating it, downloading the dependencies, init the Git repo and crete a .taskpaper file to hold the project todo list.</p>
+                  
+                  <p>When the script is executed it will look for an <strong>init.json</strong> file inside the target folder. If this is not provided the script will use the default one, that do exist in the script root folder.</p>
+                  
+                  <h3>init.json</h3>
+                  
+                  <p>The init.json is the configuration file used to bootstrap the project, and it&rsquo;s where  the components for the projects are specified. 
+                  It is possible to request the following elements:</p>
+                  
+                  <ul>
+                  <li>a <strong>boilerplate</strong>, used to setup the initial folder and files structure</li>
+                  <li>one ore more <strong>Git submodules</strong></li>
+                  <li>a series of <strong>libraries</strong></li>
+                  <li>a <strong>folder name</strong> to organize the libraries in</li>
+                  <li>the initial <strong>commit message</strong></li>
+                  <li>and the name of the <strong>todo list file</strong></li>
+                  </ul>
+                  
+                  <p>This is the default init.json you can find on  the github project:</p>
+                  <pre class="highlight json"><code><span class="p">{</span><span class="w">
+                          </span><span class="nt">"boilerplate"</span><span class="p">:</span><span class="w"> </span><span class="s2">"https://github.com/federicoweber/vgHear/raw/master/boilerplate.zip"</span><span class="w">
+                      </span><span class="p">,</span><span class="w">   </span><span class="nt">"subModules"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                              </span><span class="s2">"https://github.com/federicoweber/vgHear.git"</span><span class="w">
+                          </span><span class="p">]</span><span class="w">
+                      </span><span class="p">,</span><span class="w">   </span><span class="nt">"libs"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span><span class="w">
+                  
+                          </span><span class="p">]</span><span class="w">
+                      </span><span class="p">,</span><span class="w">   </span><span class="nt">"commit"</span><span class="p">:</span><span class="w"> </span><span class="s2">"init Repo"</span><span class="w">
+                      </span><span class="p">,</span><span class="w">   </span><span class="nt">"libsPath"</span><span class="p">:</span><span class="w"> </span><span class="s2">"app/js/libs"</span><span class="w">
+                      </span><span class="p">,</span><span class="w">   </span><span class="nt">"todoName"</span><span class="p">:</span><span class="w"> </span><span class="s2">"todo.taskpaper"</span><span class="w">
+                  
+                  </span><span class="p">}</span><span class="w">
+                  </span></code></pre>
+                  
+                  <h2>Running the script</h2>
+                  
+                  <p>The target folder is passed with a <strong>target</strong> environment variable when the script is executed.</p>
+                  
+                  <p>Ex.</p>
+                  <pre class="highlight plaintext"><code>$ target=PROJECT_FOLDER node projectBootstrapp.js
+                  </code></pre>
+                  
+                  <p>To make the process faster I&rsquo;m also leverging a <a href="http://www.keyboardmaestro.com/main/">keyboard maestro</a> macro to run the script on the current selected folder in <em>finder</em>.</p>
+                  
+                  <p><img alt="here is the macro" src="https://dl.dropbox.com/u/116832/federicoweber.com/20120717-185936-RC-1-automation%20keyboardMaestro.png" /></p>
+                  
+                  <p>You can find the script on <a href="https://github.com/federicoweber/projectBootstrap">Github</a>.</p>
+                </div>
+              </article>
+            </li>
+            <li>
+              <article class='note'>
+                <header class='note--header'>
+                  <h1>
                     <a href="/notes/webGl_minecraft.html">Minecraft in webGl</a>
                   </h1>
                   <div class='note--meta'>

@@ -5,10 +5,24 @@
   <id>http://federicoweber.com/notes</id>
   <link href="http://federicoweber.com/notes"/>
   <link href="http://federicoweber.com/feed.xml" rel="self"/>
-  <updated>2015-12-05T11:16:00+01:00</updated>
+  <updated>2015-12-10T17:03:00+01:00</updated>
   <author>
     <name>Blog Author</name>
   </author>
+  <entry>
+    <title>Quantum Computers Explained</title>
+    <link rel="alternate" href="http://federicoweber.com/notes/quantum-computers-explained.html"/>
+    <id>http://federicoweber.com/notes/quantum-computers-explained.html</id>
+    <published>2015-12-10T17:03:00+01:00</published>
+    <updated>2015-12-10T17:11:27+01:00</updated>
+    <author>
+      <name>Federico Weber</name>
+    </author>
+    <content type="html">&lt;iframe width="658" height="370" src="http://www.youtube.com/embed/JhHMJCUmq28" frameborder="0" allowfullscreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Quantum computing and the limits of Human technology explained by the exceptional &lt;a href="http://kurzgesagt.org/"&gt;Kurzgesagt&lt;/a&gt; team.&lt;/p&gt;
+</content>
+  </entry>
   <entry>
     <title>Volvo Trucks - Look Who’s Driving</title>
     <link rel="alternate" href="http://federicoweber.com/notes/volvo-trucks-remote.html"/>
@@ -818,23 +832,6 @@ end replaceText
 &lt;p&gt;The second rules is used to erase the file after one week if the file have been properly parsed. I could have used just one rule and delete the content after it have been parsed, but I prefer to keep the files longer to fallback if something goes bad.&lt;/p&gt;
 
 &lt;p&gt;If you found this useful please let me know via &lt;a href="http://twitter.com/FedericoWeber"&gt;twitter&lt;/a&gt; or &lt;a href="https://alpha.app.net/federicoweber"&gt;app.net&lt;/a&gt;.&lt;/p&gt;
-</content>
-  </entry>
-  <entry>
-    <title>Samsara</title>
-    <link rel="alternate" href="http://federicoweber.com/notes/movie_samsara.html"/>
-    <id>http://federicoweber.com/notes/movie_samsara.html</id>
-    <published>2012-08-26T02:00:00+02:00</published>
-    <updated>2015-10-10T19:43:39+02:00</updated>
-    <author>
-      <name>Federico Weber</name>
-    </author>
-    <content type="html">&lt;iframe src="http://player.vimeo.com/video/46273869?title=0&amp;amp;byline=0&amp;amp;portrait=0&amp;amp;color=da9315" width="657" height="274" frameborder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;When I first hear about &lt;a href="http://www.barakasamsara.com/baraka/about"&gt;Baraka&lt;/a&gt;, almost 5 years ago, I was quite skeptical about it—96 minutes of photographs and music is not something to take lightly—but while watching it I was mesmerized by the experience and beauty of the images. And at today I still consider it one of my favorites movies of all the times.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.barakasamsara.com"&gt;Samsara&lt;/a&gt;, also directed by Ron Fricke and  produced by Mark Magidson, expand the themes developed in &lt;a href="http://www.barakasamsara.com/baraka/about"&gt;Baraka&lt;/a&gt; and take us on an extraordinary trip around the world  showing &amp;ldquo;&lt;em&gt;the ever turning wheel of life&lt;/em&gt;&amp;rdquo;. 
-The movie have been shoot for almost five years on something like one hundred of location, spanned across twenty-five countries, and have been photographed entirely in 70mm film using a custom build motion control time-lapse camera.&lt;/p&gt;
 </content>
   </entry>
 </feed>
